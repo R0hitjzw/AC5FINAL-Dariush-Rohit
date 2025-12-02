@@ -1,0 +1,175 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "FeralFont";
+  src: url("./fonts/feral.regular.ttf");
+}
+@font-face {
+  font-family: "Crow";
+  src: url("./fonts/October Crow.ttf");
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* BODY */
+body {
+  background-color: #0f0f0f;
+  color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+  gap: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  background-color: #0f0f0f;
+  border-bottom: 2px solid #8d0d0d;
+  transition: background-color 0.3s, border-color 0.3s;
+  width: 100vw;
+  margin-top: -6vh;
+}
+header h2 {
+  font-family: "Creepster", cursive;
+  font-size: 1.8rem;
+  color: #8d0d0d;
+  margin: 0;
+  transition: color 0.3s;
+}
+header nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+header nav ul li {
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+header nav ul li a {
+  display: flex;
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: "Arial", sans-serif;
+  color: #f5f5f5;
+  transition: color 0.3s;
+}
+header nav ul li a:hover {
+  color: white;
+}
+header nav ul li:hover {
+  background-color: #8d0d0d;
+  border: 3px solid black;
+}
+header nav ul li:hover a {
+  color: white;
+}
+
+.tarjetas-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  text-decoration: none;
+}
+.tarjetas-container .tarjetaPsicopata {
+  display: flex;
+  background-color: #1a1a1a;
+  border: 2px solid #8d0d0d;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  width: 75%;
+  text-decoration: none;
+}
+.tarjetas-container .tarjetaPsicopata:hover {
+  transform: scale(1.02);
+}
+.tarjetas-container .tarjetaPsicopata .imagen {
+  width: 30%;
+  height: auto;
+  display: flex;
+}
+.tarjetas-container .tarjetaPsicopata .imagen img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+.tarjetas-container .tarjetaPsicopata .info {
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+.tarjetas-container .tarjetaPsicopata .info h3 {
+  display: flex;
+  justify-content: center;
+  font-family: "Crow";
+  letter-spacing: 3px;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  color: #f5f5f5;
+}
+.tarjetas-container .tarjetaPsicopata .info p {
+  display: flex;
+  justify-content: center;
+  font-family: "Crow";
+  letter-spacing: 3px;
+  font-size: 1rem;
+  color: #f5f5f5;
+  line-height: 1.4;
+}
+
+/* Modo claro */
+body.light-mode .tarjetaPsicopata {
+  background-color: #f5f5f5;
+  border-color: #8d0d0d;
+}
+body.light-mode .tarjetaPsicopata .info h3,
+body.light-mode .tarjetaPsicopata .info p {
+  color: #1a1a1a;
+}
+
+/* BOTÓN MODO OSCURO/CLARO */
+.toggle-mode {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #8d0d0d;
+  border: none;
+  color: white;
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+body.light-mode .toggle-mode {
+  background-color: #b01818;
+}
+
+.toggle-mode:hover {
+  transform: scale(1.1);
+}
+
+/*# sourceMappingURL=styles-casos.css.map */

@@ -1,0 +1,204 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: "FeralFont";
+    src: url("./fonts/feral.regular.ttf");
+}
+
+@font-face {
+    font-family: "Crow";
+    src: url("./fonts/October Crow.ttf");
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+$rojo: #8d0d0d;
+$negro: #0f0f0f;
+$grisOscuro: #1a1a1a;
+$grisClaro: #f5f5f5;
+$transitionTime: 0.3s;
+$fuenteTitulo: 'Creepster', cursive;
+$fuenteTexto: 'Arial', sans-serif;
+
+body {
+    background-color: $negro;
+    color: $grisClaro;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+    gap: 1.5rem;
+    transition: all $transitionTime ease;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    background-color: $negro;
+    border-bottom: 2px solid $rojo;
+    transition: background-color $transitionTime, border-color $transitionTime;
+    width: 100vw;
+    margin-top: -6vh;
+
+    h2 {
+    font-family: $fuenteTitulo;
+    font-size: 1.8rem;
+    color: $rojo;
+    margin: 0;
+    transition: color $transitionTime;
+  }
+
+    nav {
+        ul {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                border-radius: 8px;
+                overflow: hidden;
+                transition: all $transitionTime;
+
+                a {
+                    display: flex;
+                    padding: 0.6rem 1.2rem;
+                    text-decoration: none;
+                    font-weight: bold;
+                    font-family: $fuenteTexto;
+                    color: $grisClaro;
+                    transition: color $transitionTime;
+
+                    &:hover {
+                        color: white;
+                    }
+                }
+
+                &:hover {
+                    background-color: $rojo;
+                    border: 3px solid black;
+
+                    a {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.tarjetas-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    text-decoration: none;
+
+    .tarjetaPsicopata {
+        display: flex;
+        background-color: $grisOscuro;
+        border: 2px solid $rojo;
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all $transitionTime ease;
+        width: 75%;
+        text-decoration: none;
+
+        &:hover {
+            transform: scale(1.02);
+        }
+
+        .imagen {
+            width: 30%;
+            height: auto; 
+            display: flex;
+
+            img {
+                width: 100%;
+                height: auto; 
+                object-fit: cover;
+                display: block;
+            }
+        }
+
+        .info {
+            padding: 1rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+
+            h3 {
+                display: flex;
+                justify-content: center;
+                font-family: "Crow";
+                letter-spacing: 3px;
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+                width: 100%;
+                color: $grisClaro;
+            }
+
+            p {
+                display: flex;
+                justify-content: center;
+                font-family: "Crow";
+                letter-spacing: 3px;
+                font-size: 1rem;
+                color: $grisClaro;
+                line-height: 1.4;
+            }
+        }
+    }
+
+}
+
+body.light-mode .tarjetaPsicopata {
+    background-color: $grisClaro;
+    border-color: $rojo;
+
+    .info {
+
+        h3,
+        p {
+            color: $grisOscuro;
+        }
+    }
+}
+
+/* BOTÓN MODO OSCURO/CLARO */
+.toggle-mode {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: $rojo;
+    border: none;
+    color: white;
+    padding: 0.7rem 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all $transitionTime;
+}
+
+body.light-mode .toggle-mode {
+    background-color: #b01818;
+}
+
+.toggle-mode:hover {
+    transform: scale(1.1);
+}
+
+/*# sourceMappingURL=styles2.css.map */
